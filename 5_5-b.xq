@@ -1,0 +1,1 @@
+<soldiers>{sum(//soldiers/*)}</soldiers>
