@@ -1,0 +1,11 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX a: <http://www.daml.org/2001/01/gedcom/gedcom#>
+
+SELECT DISTINCT ?n
+WHERE {
+    ?i a:name "Beatrix of_Netherlands //" .
+    ?i a:spouseIn ?x .
+    ?j a:spouseIn ?x .
+    ?j a:name ?n .
+    FILTER(?i != ?j)
+}

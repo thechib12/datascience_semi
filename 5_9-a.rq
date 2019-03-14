@@ -1,0 +1,10 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX a: <http://www.daml.org/2001/01/gedcom/gedcom#>
+
+SELECT DISTINCT ?p 
+WHERE
+ { 
+   ?i a:place ?p .
+   ?i rdf:type a:Marriage .
+   FILTER regex(?p, "Netherlands")
+ }
