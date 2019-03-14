@@ -1,0 +1,12 @@
+PREFIX a: <http://www.daml.org/2001/01/gedcom/gedcom#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?local ?remote ?remote_property ?remote_value
+WHERE {
+    ?local a:name "Beatrix of_Netherlands //" .
+    ?local owl:sameAs ?remote .
+    SERVICE <http://dbpedia.org/sparql> {
+        ?remote ?remote_property ?remote_value
+    }
+}
